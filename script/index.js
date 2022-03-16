@@ -19,14 +19,14 @@ let graphics;
 let bars;
 
 // Game parameters
-const START_HP = 40; // The amount of HP each player starts with
-const START_SP = 10; // The amount of SP each player starts with
-const MAX_STAT = 10; // The highest any stat can go
+const START_HP = 500; // The amount of HP each player starts with
+const START_SP = 75; // The amount of SP each player starts with
+const MAX_STAT = 50; // The highest any stat can go
 const MIN_DODGE = 4; // The target the player needs to hit to
 const DODGE_MULTI = 0.25 // The multiplier of damage that is reduced by a dodge
 const COST_DOUBLE = 2; // The SP cost of a Double Attack
-const COST_RECOVER = 3; // The SP cost of Recover
-const RECOVER_MULTI = 3; // THe multiplier to the random amount of recovered HP
+const COST_RECOVER = 5; // The SP cost of Recover
+const RECOVER_MULTI = 5; // THe multiplier to the random amount of recovered HP
 
 // This is the template that we create new fighters from
 class Fighter {
@@ -38,9 +38,9 @@ class Fighter {
         this.name = name;
         this.hp = START_HP;
         this.sp = START_SP;
-        this.atk = 5;
-        this.def = 5;
-        this.tek = 5;
+        this.atk = 100;
+        this.def = 200;
+        this.tek = 100;
         this.charaName = charaName;
     }
 
@@ -257,7 +257,7 @@ function startup() {
     Player0 = new Fighter(P0NAME, P0CHARA);
     Player1 = new Fighter(P1NAME, P1CHARA);
     // Create images
-    graphics.innerHTML = '<img id="' + P0CHARA + 'IMG" class="fighterIMG" src="img/' + P0CHARA + '_idle.png" alt="' + P0NAME + '">';
+    graphics.innerHTML = '<img width="64" id="' + P0CHARA + 'IMG" class="fighterIMG" src="img/' + P0CHARA + '_idle.png" alt="' + P0NAME + '">';
     graphics.innerHTML += '<img id="' + P1CHARA + 'IMG" class="fighterIMG" src="img/' + P1CHARA + '_idle.png" alt="' + P1NAME + '">';
     // Create bars
     bars.innerHTML = '<div id="' + P0CHARA + 'HPbar" class="hpBar"></div>';
